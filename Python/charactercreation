@@ -1,0 +1,95 @@
+full_dot = '●'
+empty_dot = '○'
+
+def create_character():
+    character_name = input("Enter character name: ")
+
+    while True:
+        if not isinstance(character_name, str):
+            print("The character name should be a string.")
+            character_name = input("Enter character name again: ")
+            continue
+
+        if len(character_name) > 10:
+            print("The character name is too long.")
+            character_name = input("Enter character name again: ")
+            continue
+
+        if " " in character_name:
+            print("The character name should not contain spaces.")
+            character_name = input("Enter character name again: ")
+            continue
+
+        break
+
+    while True:
+        while True:
+            STR_input = input("What is your STR? ")
+
+            if not STR_input.isdigit():
+                print("All stats should be integers.")
+                continue
+
+            STR = int(STR_input)
+
+            if STR > 4:
+                print("All stats should be no more than 4.")
+                continue
+            if STR < 1:
+                print("All stats should be no less than 1.")
+                continue
+
+            break
+
+        while True:
+            INT_input = input("What is your INT? ")
+
+            if not INT_input.isdigit():
+                print("All stats should be integers.")
+                continue
+
+            INT = int(INT_input)
+
+            if INT > 4:
+                print("All stats should be no more than 4.")
+                continue
+            if INT < 1:
+                print("All stats should be no less than 1.")
+                continue
+
+            break
+
+        while True:
+            CHA_input = input("What is your CHA? ")
+
+            if not CHA_input.isdigit():
+                print("All stats should be integers.")
+                continue
+
+            CHA = int(CHA_input)
+
+            if CHA > 4:
+                print("All stats should be no more than 4.")
+                continue
+            if CHA < 1:
+                print("All stats should be no less than 1.")
+                continue
+
+            break
+
+        total = STR + INT + CHA
+        if total != 7:
+            print(f"The total of your stats is {total}, but it must be exactly 7.")
+            print("Re-enter your stats.\n")
+            continue
+
+        break
+    print(character_name)
+    print(f"STR: {full_dot * STR}{empty_dot * (10 - STR)}")
+    print(f"INT: {full_dot * INT}{empty_dot * (10 - INT)}")
+    print(f"CHA: {full_dot * CHA}{empty_dot * (10 - CHA)}")
+
+    
+
+# YOU MUST CALL THE FUNCTION:
+create_character()

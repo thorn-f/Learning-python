@@ -1,0 +1,8 @@
+import time
+
+weight = float(input("Type your weight in KG: "))
+heigth = float(input("Type your height in M: "))
+BMI = weight / heigth ** 2  
+print("Calculating your BMI...", end=" ", flush=True)
+time.sleep(2)
+print("Your BMI is:", BMI)
